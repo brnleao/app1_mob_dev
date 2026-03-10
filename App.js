@@ -3,8 +3,10 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 export default function App() {
   const usuario = {
     nome: "Bruno Leão",
-    bio: "Analista de Dados💻",
-    seguidores: "67M",
+    bio: "Analista de Dados 💻",
+    seguidores: "69M",
+    info_facul: "Engenharia de Software - 3º Ano",
+    frase: "A vida é sobre tentar até conseguir",
     avatar: "https://blog.futfanatics.com.br/wp-content/uploads/2025/08/cristiano-ronaldo-no-manchester-united-1.jpg",
   };
   return (
@@ -18,10 +20,15 @@ export default function App() {
       <Text style={styles.nome}>{usuario.nome}</Text>
       {/* Bio */}
       <Text style={styles.bio}>{usuario.bio}</Text>
+      {/* Informações Faculdade */}
+      <Text style={styles.info_facul}>{usuario.info_facul}</Text>
       {/* Stats */}
       <View style={styles.stats}>
         <Text style={styles.stat}>👥 {usuario.seguidores} seguidores</Text>
       </View>
+
+      {/* Frase */}
+      <Text style={styles.frase}>{usuario.frase}</Text>
     </View>
   );
 }
@@ -52,6 +59,11 @@ const styles = StyleSheet.create({
     color: '#aaa',
     textAlign: 'center',
     marginBottom: 16,
+  },
+  info_facul: {
+    fontSize: 14,
+    color: 'yellow',
+    paddingBottom: 15,
   },
   stats: {
     backgroundColor: '#1a1a1a',
