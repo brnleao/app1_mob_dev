@@ -25,9 +25,16 @@ export default function App() {
         <Text style={styles.stat}>👥 {usuario.seguidores} seguidores</Text>
       </View>
 
+      <View style={styles.stats}>
+        <Text style={styles.linkedin}>{usuario.linkedin}</Text>
+      </View>
+
+      <View style={styles.stats}>
+        <Text style={styles.github}>{usuario.github}</Text>
+      </View>
+
       <Text style={styles.frase}>{usuario.frase}</Text>
 
-      <Text style={styles.}>{usuario.}</Text>
     </View>
   );
 }
@@ -39,7 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#0a0a0a',
     padding: 20,
   },
-
   avatar: {
     width: 150,
     height: 150,
@@ -48,39 +54,33 @@ const styles = StyleSheet.create({
     borderColor: '#E1306C',
     marginBottom: 16,
   },
-
   nome: {
     fontSize: 22,
     fontWeight: 'bold',
     color: '#fff',
     marginBottom: 8,
   },
-
   bio: {
     fontSize: 14,
     color: '#aaa',
     textAlign: 'center',
     marginBottom: 16,
   },
-
   info_facul: {
     fontSize: 14,
     color: 'yellow',
     paddingBottom: 15,
   },
-
   stats: {
     backgroundColor: '#1a1a1a',
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 20,
   },
-
   stat: {
     color: '#fff',
     fontSize: 14,
   },
-
   frase: {
     marginTop: "auto",
     color: "gray",
@@ -88,5 +88,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     padding: 10,
     fontStyle: 'italic',
+  },
+  linkedin:{
+    color: "red",
+  },
+  github:{
+    color: "red",
   },
 });
