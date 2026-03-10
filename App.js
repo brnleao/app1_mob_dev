@@ -1,20 +1,66 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 export default function App() {
+  const usuario = {
+    nome: "Bruno Leão",
+    bio: "Analista de Dados💻",
+    seguidores: "67M",
+    avatar: "https://blog.futfanatics.com.br/wp-content/uploads/2025/08/cristiano-ronaldo-no-manchester-united-1.jpg",
+  };
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* Avatar */}
+      <Image
+        source={{ uri: usuario.avatar }}
+        style={styles.avatar}
+      />
+      {/* Nome */}
+      <Text style={styles.nome}>{usuario.nome}</Text>
+      {/* Bio */}
+      <Text style={styles.bio}>{usuario.bio}</Text>
+      {/* Stats */}
+      <View style={styles.stats}>
+        <Text style={styles.stat}>👥 {usuario.seguidores} seguidores</Text>
+      </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#0a0a0a',
+    padding: 20,
+  },
+  avatar: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 3,
+    borderColor: '#E1306C',
+    marginBottom: 16,
+  },
+  nome: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  bio: {
+    fontSize: 14,
+    color: '#aaa',
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  stats: {
+    backgroundColor: '#1a1a1a',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  stat: {
+    color: '#fff',
+    fontSize: 14,
   },
 });
