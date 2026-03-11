@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function App() {
   const usuario = {
@@ -7,8 +7,8 @@ export default function App() {
     seguidores: "69k",
     info_facul: "Engenharia de Software - 3º Ano",
     frase: "A vida é sobre tentar até conseguir",
-    linkedin: "https://br.linkedin.com/in/bruno-carneiro-le%C3%A3o-9a6498248",
-    github: "https://github.com/brnleao",
+    linkedin: "Linkedin",
+    github: "Github",
     avatar: "https://blog.futfanatics.com.br/wp-content/uploads/2025/08/cristiano-ronaldo-no-manchester-united-1.jpg",
   };
 
@@ -25,12 +25,14 @@ export default function App() {
         <Text style={styles.stat}>👥 {usuario.seguidores} seguidores</Text>
       </View>
 
-      <View style={styles.stats}>
+      <View style={styles.redesocial}>
         <Text style={styles.linkedin}>{usuario.linkedin}</Text>
+        <TouchableOpacity></TouchableOpacity>
       </View>
 
-      <View style={styles.stats}>
+      <View style={styles.redesocial}>
         <Text style={styles.github}>{usuario.github}</Text>
+        <TouchableOpacity></TouchableOpacity>
       </View>
 
       <Text style={styles.frase}>{usuario.frase}</Text>
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#0a0a0a',
+    backgroundColor: '#02021A',
     padding: 20,
   },
   avatar: {
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 999,
     borderWidth: 3,
-    borderColor: '#E1306C',
+    borderColor: 'red',
     marginBottom: 16,
   },
   nome: {
@@ -70,12 +72,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'yellow',
     paddingBottom: 15,
+    fontWeight: 'bold',
   },
   stats: {
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#3F0047',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderRadius: 20,
+    borderRadius: 999,
+    margin: 10
   },
   stat: {
     color: '#fff',
@@ -90,9 +94,24 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   linkedin:{
-    color: "red",
+    color: "white",
+    paddingRight: 20,
+    paddingLeft: 20,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
   },
   github:{
-    color: "red",
+    color: "white",
+    paddingRight: 20,
+    paddingLeft: 20,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+  },
+  redesocial: {
+    backgroundColor: '#3F0047',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 999,
+    marginTop: 5,
   },
 });
